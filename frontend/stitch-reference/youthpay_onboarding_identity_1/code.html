@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouthPay | Identity Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#001945",
+                        "on-secondary-container": "#3b6d63",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#35675d",
+                        "soft-stone": "#eeece7",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#417ef8",
+                        "tertiary": "#000000",
+                        "on-surface-variant": "#47464b",
+                        "outline": "#78767b",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "hairline": "#d9d9dd",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#d9e2ff",
+                        "surface-tint": "#5f5e64",
+                        "primary": "#000000",
+                        "on-tertiary-fixed-variant": "#00419d",
+                        "error": "#ba1a1a",
+                        "muted": "#93939f",
+                        "action-blue": "#1863dc",
+                        "canvas": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary-fixed-variant": "#47464c",
+                        "on-secondary-fixed": "#00201b",
+                        "surface-dim": "#dadada",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-primary": "#c8c5cc",
+                        "tertiary-container": "#001945",
+                        "on-background": "#1a1c1c",
+                        "outline-variant": "#c8c5cb",
+                        "secondary-fixed": "#b8ede0",
+                        "on-primary-fixed": "#1b1b20",
+                        "coral": "#ff7759",
+                        "deep-green": "#003c33",
+                        "primary-fixed": "#e4e1e8",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#b0c6ff",
+                        "secondary-container": "#b8ede0",
+                        "background": "#f9f9f9",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#848389",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed-dim": "#9dd1c4",
+                        "on-secondary-fixed-variant": "#1b4f45",
+                        "on-surface": "#1a1c1c",
+                        "primary-fixed-dim": "#c8c5cc",
+                        "surface": "#f9f9f9",
+                        "ink": "#212121",
+                        "primary-container": "#1b1b20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "card": "22px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "xxl": "32px",
+                        "section-desktop": "80px",
+                        "lg": "16px",
+                        "xxs": "2px",
+                        "section-mobile": "48px",
+                        "xs": "6px",
+                        "md": "12px",
+                        "xl": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["spaceGrotesk"],
+                        "body-md": ["inter"],
+                        "headline-lg-mobile": ["spaceGrotesk"],
+                        "body-lg": ["inter"],
+                        "button": ["inter"],
+                        "caption": ["inter"],
+                        "headline-md": ["inter"],
+                        "label-mono": ["spaceGrotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "button": ["14px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'inter', sans-serif;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-indicator {
+            transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        .glow-subtle {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.03);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-canvas text-primary">
+<!-- Top Navigation Bar (Simplified for Onboarding) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-canvas px-lg py-md flex flex-col gap-md">
+<div class="flex justify-between items-center w-full">
+<span class="font-headline-md text-headline-md font-bold text-primary">YouthPay</span>
+<div class="text-muted font-label-mono text-label-mono">STEP 4 OF 6</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-[4px] bg-surface-container rounded-full overflow-hidden">
+<div class="step-indicator h-full bg-primary" style="width: 60%;"></div>
+</div>
+</header>
+<main class="pt-[100px] pb-section-mobile px-lg max-w-[500px] mx-auto min-h-screen flex flex-col justify-between">
+<!-- Header Section -->
+<section class="mt-xl">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary leading-tight">
+                Verify your Identity
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">
+                To keep YouthPay secure, we need a quick scan of your B-Form or Student ID.
+            </p>
+</section>
+<!-- Main Interaction Area -->
+<section class="flex-grow flex flex-col justify-center py-xxl gap-lg">
+<!-- Scanning Card Interaction -->
+<button class="relative w-full aspect-[1.6/1] bg-surface-container-low border-2 border-dashed border-outline-variant rounded-card flex flex-col items-center justify-center gap-md hover:border-action-blue hover:bg-surface-bright transition-all active:scale-[0.98] group overflow-hidden">
+<!-- Decorative Corners for Scan Feel -->
+<div class="absolute top-md left-md w-xl h-xl border-t-2 border-l-2 border-primary group-hover:border-action-blue"></div>
+<div class="absolute top-md right-md w-xl h-xl border-t-2 border-r-2 border-primary group-hover:border-action-blue"></div>
+<div class="absolute bottom-md left-md w-xl h-xl border-b-2 border-l-2 border-primary group-hover:border-action-blue"></div>
+<div class="absolute bottom-md right-md w-xl h-xl border-b-2 border-r-2 border-primary group-hover:border-action-blue"></div>
+<span class="material-symbols-outlined text-[48px] text-muted group-hover:text-action-blue transition-colors">photo_camera</span>
+<span class="font-headline-md text-headline-md font-medium text-primary">Scan Student ID</span>
+<span class="font-label-mono text-label-mono text-muted">Front &amp; Back Required</span>
+</button>
+<!-- Parental Consent Status Card -->
+<div class="bg-soft-stone p-lg rounded-xl flex items-center justify-between glow-subtle border border-hairline">
+<div class="flex items-center gap-md">
+<div class="w-xxl h-xxl bg-deep-green rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-deep-green">Parental Consent Verified</p>
+<p class="font-caption text-caption text-on-secondary-fixed-variant opacity-80">Linked to: Muhammad Ahmed</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-deep-green">verified_user</span>
+</div>
+<!-- Supporting Info -->
+<div class="px-md">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-muted text-[18px]">info</span>
+<p class="font-caption text-caption text-muted italic">
+                        Verification typically takes less than 2 minutes. We use enterprise-grade encryption to protect your data.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Action Footer -->
+<footer class="mt-auto">
+<button class="w-full bg-primary text-on-primary font-button text-button py-lg rounded-full shadow-lg active:scale-95 transition-transform hover:opacity-90">
+                Continue to Dashboard
+            </button>
+<button class="w-full bg-transparent text-muted font-button text-button py-md mt-sm active:opacity-60 transition-opacity">
+                I'll do this later
+            </button>
+</footer>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                if(!button.classList.contains('active:scale-95')) {
+                    button.style.transform = 'scale(0.98)';
+                }
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'scale(1)';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple progress update simulation
+        window.addEventListener('load', () => {
+            const bar = document.querySelector('.step-indicator');
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = '60%';
+            }, 300);
+        });
+    </script>
+</body></html>

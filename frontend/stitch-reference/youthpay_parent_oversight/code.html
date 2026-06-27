@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Parent Visibility Dashboard | YouthPay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#001945",
+                        "on-secondary-container": "#3b6d63",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#35675d",
+                        "soft-stone": "#eeece7",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#417ef8",
+                        "tertiary": "#000000",
+                        "on-surface-variant": "#47464b",
+                        "outline": "#78767b",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "hairline": "#d9d9dd",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#d9e2ff",
+                        "surface-tint": "#5f5e64",
+                        "primary": "#000000",
+                        "on-tertiary-fixed-variant": "#00419d",
+                        "error": "#ba1a1a",
+                        "muted": "#93939f",
+                        "action-blue": "#1863dc",
+                        "canvas": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary-fixed-variant": "#47464c",
+                        "on-secondary-fixed": "#00201b",
+                        "surface-dim": "#dadada",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-primary": "#c8c5cc",
+                        "tertiary-container": "#001945",
+                        "on-background": "#1a1c1c",
+                        "outline-variant": "#c8c5cb",
+                        "secondary-fixed": "#b8ede0",
+                        "on-primary-fixed": "#1b1b20",
+                        "coral": "#ff7759",
+                        "deep-green": "#003c33",
+                        "primary-fixed": "#e4e1e8",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#b0c6ff",
+                        "secondary-container": "#b8ede0",
+                        "background": "#f9f9f9",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#848389",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed-dim": "#9dd1c4",
+                        "on-secondary-fixed-variant": "#1b4f45",
+                        "on-surface": "#1a1c1c",
+                        "primary-fixed-dim": "#c8c5cc",
+                        "surface": "#f9f9f9",
+                        "ink": "#212121",
+                        "primary-container": "#1b1b20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "xxl": "32px",
+                        "section-desktop": "80px",
+                        "lg": "16px",
+                        "xxs": "2px",
+                        "section-mobile": "48px",
+                        "xs": "6px",
+                        "md": "12px",
+                        "xl": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "button": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-mono": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "button": ["14px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- Top Navigation Anchor -->
+<nav class="flex justify-between items-center px-lg py-sm w-full bg-canvas border-b border-hairline sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-hairline">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a young Pakistani teenager named Haniya, smiling confidently. She is wearing a modern teal headscarf and a crisp white shirt. The lighting is soft and high-key against a minimalist light grey background, reflecting a clean, editorial financial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiLJhd6FpIL4K6lQ5AUSLPKHWMOKu_t4Qrf-iIBOgDw0VWfYlsisqbCW7BeHHBDTAyB2CU9lB-HzLZEsvp9C9QawteAc-aBtoQuGMEqZdicXAsOhmfMumSW4J6Sowvy-B3K9gh7mdD_hobfckvcSishoIkMDb0sy75W0QVg4rvFEwpHZgQ2TPoc75VJMRhFJ2EnyDBDFjDqIWdDslE_zVteiOz3xvHdGXBr5IDkbS9QIwsFQF9mT0ALxiNpB69jN5z9MJuS0-04gs"/>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md font-bold text-primary leading-tight">Parent Mode</h1>
+<span class="font-caption text-caption text-muted">Haniya's Overview</span>
+</div>
+</div>
+<div class="flex gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+</button>
+</div>
+</nav>
+<main class="max-w-[1200px] mx-auto px-lg py-lg space-y-xl">
+<!-- Insight Band (Agent Console Style) -->
+<section class="w-full bg-tertiary-container text-on-tertiary rounded-xl p-xl relative overflow-hidden">
+
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-lg">
+<div class="space-y-xs">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-on-tertiary-container">Spending Health</span>
+</div>
+<p class="font-headline-md text-headline-md text-canvas max-w-2xl">
+                        Haniya is managing her allowance well, but coffee spending is high. <span class="text-on-tertiary-container">No intervention required.</span>
+</p>
+</div>
+<div class="flex gap-sm">
+<span class="px-md py-xs bg-canvas/10 rounded-full font-label-mono text-caption text-canvas border border-canvas/20">Stable Velocity</span>
+</div>
+</div>
+</section>
+<!-- Main Dashboard Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-xl">
+<!-- Left Column: Controls -->
+<div class="md:col-span-5 space-y-lg">
+<h2 class="font-label-mono text-label-mono uppercase text-muted tracking-widest px-xxs">Governance Controls</h2>
+<!-- Approval Queue Card -->
+<div class="bg-canvas border border-hairline rounded-xl p-lg hover:border-action-blue transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="pending_actions">pending_actions</span>
+</div>
+<span class="bg-coral text-canvas font-label-mono text-caption px-md py-xxs rounded-full">2 Action Required</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold mb-xs">Approval Queue</h3>
+<p class="text-muted mb-lg">Show 2 pending requests (e.g., for a PKR 5,000 makeup kit).</p>
+<div class="flex items-center gap-xs text-action-blue font-button group-hover:gap-sm transition-all">
+                        Review Requests <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Allowance Settings Card -->
+<div class="bg-canvas border border-hairline rounded-xl p-lg hover:border-action-blue transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="event_repeat">event_repeat</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-mono text-caption px-md py-xxs rounded-full">Automated</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold mb-xs">Allowance Settings</h3>
+<div class="flex flex-col gap-xxs mb-lg">
+<span class="font-headline-md text-primary">PKR 10,000<span class="text-muted text-body-md font-normal">/mo</span></span>
+<span class="text-muted text-caption">Next: July 1st, 2024</span>
+</div>
+<div class="flex items-center gap-xs text-action-blue font-button group-hover:gap-sm transition-all">
+                        Edit Schedule <span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Transaction Feed -->
+<div class="md:col-span-7 space-y-lg">
+<div class="flex justify-between items-center px-xxs">
+<h2 class="font-label-mono text-label-mono uppercase text-muted tracking-widest">Transaction Intelligence</h2>
+<button class="text-action-blue font-button text-caption flex items-center gap-xs">
+                        Download Report <span class="material-symbols-outlined text-[16px]" data-icon="download">download</span>
+</button>
+</div>
+<div class="bg-canvas border border-hairline rounded-xl overflow-hidden">
+<!-- Feed Header -->
+<div class="px-lg py-md border-b border-hairline bg-surface-container-low flex items-center justify-between">
+<span class="font-label-mono text-caption text-muted uppercase">Merchant Cleanup Active</span>
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-muted text-[18px]" data-icon="filter_list">filter_list</span>
+<span class="material-symbols-outlined text-muted text-[18px]" data-icon="search">search</span>
+</div>
+</div>
+<!-- Transactions List -->
+<div class="divide-y divide-hairline">
+<!-- Transaction 1 -->
+<div class="px-lg py-md flex items-center justify-between hover:bg-surface-bright transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-soft-stone flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="coffee">coffee</span>
+</div>
+<div>
+<h4 class="font-body-md font-bold text-primary">Butlers Chocolate Cafe</h4>
+<p class="text-caption text-muted">Zamzama Mall • Today, 4:12 PM</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-mono font-bold text-primary">PKR 1,450</p>
+<p class="text-caption text-on-secondary-container">Approved</p>
+</div>
+</div>
+<!-- Transaction 2 -->
+<div class="px-lg py-md flex items-center justify-between hover:bg-surface-bright transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-soft-stone flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div>
+<h4 class="font-body-md font-bold text-primary">Khaadi Digital Store</h4>
+<p class="text-caption text-muted">E-Commerce • Yesterday, 8:45 PM</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-mono font-bold text-primary">PKR 4,200</p>
+<p class="text-caption text-on-secondary-container">Approved</p>
+</div>
+</div>
+<!-- Transaction 3 (Pending Alert) -->
+<div class="px-lg py-md flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-canvas" data-icon="mystery_beacon">battery_error</span>
+</div>
+<div>
+<h4 class="font-body-md font-bold text-primary">Sephora Global</h4>
+<p class="text-caption text-muted">Cross-border Request • June 22</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-mono font-bold text-coral">PKR 5,000</p>
+<p class="text-caption text-coral font-bold">Awaiting You</p>
+</div>
+</div>
+<!-- Transaction 4 -->
+<div class="px-lg py-md flex items-center justify-between hover:bg-surface-bright transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-soft-stone flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant">restaurant</span>
+</div>
+<div>
+<h4 class="font-body-md font-bold text-primary">Xander's Cafe</h4>
+<p class="text-caption text-muted">Defense Phase 6 • June 21</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-mono font-bold text-primary">PKR 2,100</p>
+<p class="text-caption text-on-secondary-container">Approved</p>
+</div>
+</div>
+</div>
+<button class="w-full py-md text-caption text-muted font-label-mono border-t border-hairline hover:bg-surface-container-low transition-colors">
+                        VIEW ALL 42 TRANSACTIONS
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Canvas -->
+<div class="fixed bottom-0 w-full z-50 flex justify-around items-center bg-canvas py-md px-lg border-t border-hairline md:hidden">
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-xl py-xs">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-caption text-caption">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-muted px-xl py-xs">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-caption text-caption">Insights</span>
+</div>
+<div class="flex flex-col items-center justify-center text-muted px-xl py-xs">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-caption text-caption">Activity</span>
+</div>
+<div class="flex flex-col items-center justify-center text-muted px-xl py-xs">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-caption text-caption">Profile</span>
+</div>
+</div>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('.hover\\:border-action-blue').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Simple visibility toggle for mobile nav
+        const handleResize = () => {
+            const nav = document.querySelector('.fixed.bottom-0');
+            if (window.innerWidth >= 768) {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+    </script>
+</body></html>

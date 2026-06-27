@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouthPay | Financial Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .font-headline-lg { font-family: 'Space Grotesk', sans-serif; }
+        .font-label-mono { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* Custom scrollbar for activity */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#001945",
+                      "on-secondary-container": "#3b6d63",
+                      "surface-bright": "#f9f9f9",
+                      "secondary": "#35675d",
+                      "soft-stone": "#eeece7",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#417ef8",
+                      "tertiary": "#000000",
+                      "on-surface-variant": "#47464b",
+                      "outline": "#78767b",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface-container-low": "#f3f3f4",
+                      "hairline": "#d9d9dd",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#d9e2ff",
+                      "surface-tint": "#5f5e64",
+                      "primary": "#000000",
+                      "on-tertiary-fixed-variant": "#00419d",
+                      "error": "#ba1a1a",
+                      "muted": "#93939f",
+                      "action-blue": "#1863dc",
+                      "canvas": "#ffffff",
+                      "surface-variant": "#e2e2e2",
+                      "on-primary-fixed-variant": "#47464c",
+                      "on-secondary-fixed": "#00201b",
+                      "surface-dim": "#dadada",
+                      "inverse-on-surface": "#f0f1f1",
+                      "surface-container-high": "#e8e8e8",
+                      "inverse-primary": "#c8c5cc",
+                      "tertiary-container": "#001945",
+                      "on-background": "#1a1c1c",
+                      "outline-variant": "#c8c5cb",
+                      "secondary-fixed": "#b8ede0",
+                      "on-primary-fixed": "#1b1b20",
+                      "coral": "#ff7759",
+                      "deep-green": "#003c33",
+                      "primary-fixed": "#e4e1e8",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#b0c6ff",
+                      "secondary-container": "#b8ede0",
+                      "background": "#f9f9f9",
+                      "inverse-surface": "#2f3131",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#848389",
+                      "surface-container": "#eeeeee",
+                      "secondary-fixed-dim": "#9dd1c4",
+                      "on-secondary-fixed-variant": "#1b4f45",
+                      "on-surface": "#1a1c1c",
+                      "primary-fixed-dim": "#c8c5cc",
+                      "surface": "#f9f9f9",
+                      "ink": "#212121",
+                      "primary-container": "#1b1b20"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "xxl": "32px",
+                      "section-desktop": "80px",
+                      "lg": "16px",
+                      "xxs": "2px",
+                      "section-mobile": "48px",
+                      "xs": "6px",
+                      "md": "12px",
+                      "xl": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Space Grotesk"],
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Space Grotesk"],
+                      "body-lg": ["Inter"],
+                      "button": ["Inter"],
+                      "caption": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-mono": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "button": ["14px", {"lineHeight": "24px", "fontWeight": "500"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-canvas text-primary selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-lg py-sm w-full bg-canvas fixed top-0 z-50 border-b border-hairline">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container flex items-center justify-center border border-hairline">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of Haniya Ahmed, a 15-year-old Pakistani girl with a confident and intelligent expression. She has dark hair styled neatly and wears modern, minimalist attire. The background is a soft, neutral off-white with high-key lighting, maintaining a clean enterprise aesthetic. The lighting is diffused and sophisticated, emphasizing a sense of youthful leadership and financial responsibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsjNiMHkTohxZ_Lf9H0OnqcchTf07JGKNitZJO_XJfBjAvoYiKdLqfszD8VYLbsbasWvo3n2VEC6oSDCcU6BFQ_kcFjKbnSaTULbV9XKDSCc0JbHx_qsxXYsHRBA0HTYbmUQ63ocbA5ULaG-mQ2Nc4gOwP-qGwlQmVS1_9f8f5oGNsbjPIZ6hLokVepkh1a6pQ8_Qaezr9b6dWqfCM37lZWTft_AX-3gRWpe3fMoGCiBZb5jVUvMMfvNcDgFoqUp-R0eFAx1NIeZE"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-[16px] font-bold text-primary leading-tight">Haniya Ahmed</span>
+<span class="font-caption text-caption text-muted">Karachi, PK</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity p-xs">notifications</button>
+</div>
+</header>
+<main class="pt-[72px] pb-[100px] px-lg max-w-[1200px] mx-auto space-y-section-mobile">
+<!-- Hero: Budget Card -->
+<section class="mt-md">
+<div class="bg-deep-green rounded-[22px] p-xl text-on-primary shadow-sm relative overflow-hidden group">
+<!-- Background texture/light effect -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary opacity-20 blur-3xl -translate-y-1/2 translate-x-1/2 rounded-full"></div>
+<div class="relative z-10 space-y-md">
+<div class="flex justify-between items-start">
+<span class="font-label-mono text-caption uppercase tracking-widest opacity-80">Available Allowance</span>
+<span class="font-label-mono text-caption bg-white/10 px-sm py-[2px] rounded-full">JUNE 2024</span>
+</div>
+<div class="space-y-xxs">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight">PKR 4,200</h1>
+<p class="font-caption text-caption opacity-70">Remaining from PKR 10,000 budget</p>
+</div>
+<div class="pt-md">
+<div class="w-full h-[6px] bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-coral w-[42%] rounded-full transition-all duration-1000 ease-out"></div>
+</div>
+<div class="flex justify-between mt-xs font-label-mono text-[10px] uppercase opacity-60">
+<span>Spent: PKR 5,800</span>
+<span>42% Used</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Insight: Agent Console Card -->
+<section>
+<div class="bg-primary rounded-xl p-lg border border-hairline group hover:border-secondary transition-colors">
+<div class="flex items-start gap-md">
+<div class="p-sm bg-secondary-container rounded-lg shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="space-y-sm">
+<h3 class="font-headline-md text-[18px] font-bold text-on-primary">YouthPay Intelligence</h3>
+<p class="font-body-md text-on-primary opacity-80 leading-relaxed">
+                            Haniya, you've spent <span class="text-coral font-bold">40% more</span> on Coffee this week (Espresso Karachi) than your average. Consider skipping the next latte to stay on track for your Savings Goal.
+                        </p>
+<div class="pt-xs">
+<button class="font-button text-button text-secondary-fixed-dim flex items-center gap-xs hover:gap-sm transition-all">
+                                Optimization Strategy <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Feed -->
+<section class="space-y-lg">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md font-bold">Activity</h2>
+<button class="font-label-mono text-caption text-action-blue hover:underline">VIEW ALL</button>
+</div>
+<div class="space-y-0 divide-y divide-hairline">
+<!-- Transaction 1 -->
+<div class="flex items-center justify-between py-lg group cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-soft-stone rounded-lg flex items-center justify-center text-primary group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">coffee</span>
+</div>
+<div>
+<p class="font-headline-md text-[16px] font-semibold">Espresso @ Karachi</p>
+<div class="flex items-center gap-xs">
+<span class="bg-coral/10 text-coral font-label-mono text-[10px] px-xs py-px rounded uppercase">Coffee</span>
+<span class="text-muted text-caption">10:14 AM</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-mono text-body-md font-bold text-error">- PKR 850</p>
+<p class="text-muted text-caption">Wallet</p>
+</div>
+</div>
+<!-- Transaction 2 -->
+<div class="flex items-center justify-between py-lg group cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-soft-stone rounded-lg flex items-center justify-center text-primary group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+<div>
+<p class="font-headline-md text-[16px] font-semibold">MINISO Dolmen Mall</p>
+<div class="flex items-center gap-xs">
+<span class="bg-secondary/10 text-secondary font-label-mono text-[10px] px-xs py-px rounded uppercase">Lifestyle</span>
+<span class="text-muted text-caption">Yesterday</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-mono text-body-md font-bold text-error">- PKR 1,200</p>
+<p class="text-muted text-caption">Debit Card</p>
+</div>
+</div>
+<!-- Transaction 3 -->
+<div class="flex items-center justify-between py-lg group cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-soft-stone rounded-lg flex items-center justify-center text-primary group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<div>
+<p class="font-headline-md text-[16px] font-semibold">Indrive Ride</p>
+<div class="flex items-center gap-xs">
+<span class="bg-tertiary-container/10 text-tertiary-container font-label-mono text-[10px] px-xs py-px rounded uppercase text-on-tertiary-container">Transport</span>
+<span class="text-muted text-caption">June 12</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-mono text-body-md font-bold text-error">- PKR 450</p>
+<p class="text-muted text-caption">Wallet</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center bg-canvas py-md px-lg border-t border-hairline">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-xl py-xs active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-caption text-[10px] mt-xxs">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted px-xl py-xs hover:text-primary active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-caption text-[10px] mt-xxs">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted px-xl py-xs hover:text-primary active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-caption text-[10px] mt-xxs">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted px-xl py-xs hover:text-primary active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-caption text-[10px] mt-xxs">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction: Update progress bar on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const bar = document.querySelector('.bg-coral');
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = '42%';
+            }, 300);
+        });
+
+        // Click interaction for transactions
+        document.querySelectorAll('.cursor-pointer').forEach(item => {
+            item.addEventListener('click', () => {
+                item.style.transform = 'scale(0.98)';
+                setTimeout(() => item.style.transform = 'scale(1)', 100);
+            });
+        });
+    </script>
+</body></html>
