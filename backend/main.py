@@ -17,7 +17,11 @@ app = FastAPI(title="YouthPay Intelligence Engine", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://youthpay-mvp.vercel.app", "http://localhost:3000"],
+    allow_origins=[
+        "https://hackathon-youthpay.vercel.app",
+        "https://youthpay-mvp.vercel.app",
+        "http://localhost:3000",
+    ],
     # Allow any Vercel deployment (prod + previews) and any localhost dev port.
     allow_origin_regex=r"https://.*\.vercel\.app|http://localhost:\d+",
     allow_methods=["GET", "POST"],
