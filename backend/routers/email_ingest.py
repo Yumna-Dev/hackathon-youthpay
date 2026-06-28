@@ -1,8 +1,10 @@
 import os
+from datetime import datetime
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
+from data.transactions import TRANSACTIONS
 from services.email_fetcher import fetch_bank_emails
 from services.parser import parse_notification
 
@@ -24,6 +26,9 @@ def fetch_emails(req: EmailFetchRequest):
 
     raw_emails = fetch_bank_emails(gmail_user, app_password, req.max_per_sender)
 
+    # Dedup guard: don't re-merge emails already ingested (keeps repeat calls idempotent).
+    existing_raws = {t.get("raw_notification") for t in TRANSACTIONS}
+
     transactions = []
     failed = 0
     for raw in raw_emails:
@@ -31,6 +36,23 @@ def fetch_emails(req: EmailFetchRequest):
             parsed = parse_notification(raw)
             parsed["raw_text"] = raw
             transactions.append(parsed)
+
+            # Merge into the in-memory list so it shows up in /api/transactions (/activity).
+            if raw not in existing_raws:
+                TRANSACTIONS.append(
+                    {
+                        "id": len(TRANSACTIONS) + 1,
+                        "date_time": datetime.now().isoformat(),
+                        "merchant_name": parsed["merchant_name"],
+                        "amount_pkr": parsed["amount_pkr"] or 0,
+                        "direction": parsed["direction"],
+                        "category": parsed["category"],
+                        "payment_method": parsed.get("payment_method") or "Email",
+                        "source": "Gmail",
+                        "raw_notification": raw,
+                    }
+                )
+                existing_raws.add(raw)
         except Exception:
             failed += 1
 
