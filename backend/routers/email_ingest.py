@@ -26,8 +26,11 @@ def fetch_emails(req: EmailFetchRequest):
 
     raw_emails = fetch_bank_emails(gmail_user, app_password, req.max_per_sender)
 
-    # Dedup guard: don't re-merge emails already ingested (keeps repeat calls idempotent).
-    existing_raws = {t.get("raw_notification") for t in TRANSACTIONS}
+    # Dedup guard scoped to previously-merged Gmail rows only (keeps repeat calls
+    # idempotent without skipping emails whose text matches the original seed data).
+    existing_raws = {
+        t.get("raw_notification") for t in TRANSACTIONS if t.get("source") == "Gmail"
+    }
 
     transactions = []
     failed = 0
